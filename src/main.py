@@ -1,5 +1,4 @@
 from screenshot import ScreenshotManager, PathType
-import os
 def main():
     manager = ScreenshotManager()
     
