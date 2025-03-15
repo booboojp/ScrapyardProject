@@ -9,7 +9,7 @@ import ctypes
 from enum import Enum
 from typing import Optional, Tuple, Union
 
-class WindowMode(Enum):
+class WindowMode(Enum):	
     """Window display modes for the image renderer."""
     NORMAL = 0
     NOFRAME = pygame.NOFRAME
