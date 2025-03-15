@@ -107,7 +107,6 @@ class ScreenshotManager:
         Returns:
             The path if return_path is True and image is valid, otherwise None
         """
-        # Check extension before saving
         valid_extensions = ['.png', '.jpeg', '.jpg', '.webp']
         ext = os.path.splitext(file_path)[1].lower()
         if ext not in valid_extensions:
