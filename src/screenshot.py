@@ -61,7 +61,14 @@ class ScreenshotManager:
         directory = os.path.dirname(file_path)
         if directory:
             os.makedirs(directory, exist_ok=True)
-    
+    def is_valid_image(self, file_path: str) -> bool:
+        """Check if the image file is valid and meets size requirements."""
+        if not os.path.exists(file_path):
+            return False
+        if os.path.getsize(file_path) > 20 * 1024 * 1024:  # 20 MB limit
+            return False
+        valid_extensions = ['.png', '.jpeg', '.jpg', '.webp']
+        return os.path.splitext(file_path)[1].lower() in valid_extensions
     @Logging
     def save(self, file_path: str) -> None:
         """Take a screenshot and save it to the specified path."""
@@ -88,6 +95,7 @@ class ScreenshotManager:
             return os.path.relpath(file_path)
     
     @Logging
+    @Logging
     def process(self, file_path: str, return_path: bool = False, path_type: PathType = PathType.ABSOLUTE) -> str or None:
         """Main processing function that can either save a screenshot or save and return path.
         
@@ -97,10 +105,29 @@ class ScreenshotManager:
             path_type: Type of path to return when return_path=True (ABSOLUTE or LOCAL)
         
         Returns:
-            The path if return_path is True, otherwise None
+            The path if return_path is True and image is valid, otherwise None
         """
+        # Check extension before saving
+        valid_extensions = ['.png', '.jpeg', '.jpg', '.webp']
+        ext = os.path.splitext(file_path)[1].lower()
+        if ext not in valid_extensions:
+            logger.error(f"Invalid file extension: {ext}. Must be one of {valid_extensions}")
+            return None
+        
         if return_path:
-            return self.save_and_get_path(file_path, path_type)
+            result_path = self.save_and_get_path(file_path, path_type)
         else:
             self.save(file_path)
+            result_path = None
+        
+        if not self.is_valid_image(file_path):
+            logger.error(f"Screenshot at {file_path} failed validation")
+            if os.path.exists(file_path):
+                try:
+                    os.remove(file_path)
+                    logger.info(f"Removed invalid image file: {file_path}")
+                except Exception as e:
+                    logger.error(f"Failed to remove invalid image: {str(e)}")
             return None
+            
+        return result_path

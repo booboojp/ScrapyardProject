@@ -26,9 +26,7 @@ def encode_image(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode("utf-8")
 
-def process_image_with_openai(client, image_path, prompt, 
-                             model_type=ImageProcessingOpenAIModelTypes.GPT_4_O, 
-                             detail=ImageProcessingInputDetail.AUTO):
+def process_image_with_openai(client, image_path, prompt, model_type=ImageProcessingOpenAIModelTypes.GPT_4_O, detail=ImageProcessingInputDetail.AUTO):
     """Process an image with OpenAI's vision API."""
     base64_image = encode_image(image_path)
     
