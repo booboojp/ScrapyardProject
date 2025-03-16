@@ -8,6 +8,7 @@ from .openai_vision import (
     take_screenshot_and_analyze
 )
 from .tts import AdvancedTextToSpeech, SpeechConfig, SpeechState
+from .image_render import ImageRenderer, WindowMode
 
 __all__ = [
     # Screenshot related
@@ -25,5 +26,9 @@ __all__ = [
     # Text-to-speech related
     "AdvancedTextToSpeech",
     "SpeechConfig",
-    "SpeechState"
+    "SpeechState",
+
+    # Image rendering related
+    "ImageRenderer",
+    "WindowMode"
 ]

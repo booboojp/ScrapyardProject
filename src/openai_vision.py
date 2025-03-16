@@ -5,7 +5,6 @@ import os
 import base64
 
 from .screenshot import ScreenshotManager, PathType
-# William is cool!
 load_dotenv()
 
 class ImageProcessingOpenAIModelTypes(Enum):
@@ -57,7 +56,7 @@ def generate_joke_from_description(client, description, model_type=ImageProcessi
     
     {description}
     
-    Please make a funny joke about what's on this screen. Keep it light and relevant to the content described. But actully make it funny, it can also be about the user who is on this screen. Or roast them, mainly roast them Witch would be prefered. Dont say anything before or after the roast, just say it."""
+    Please make a funny roast about what's on this screen. Assume that you are told it is a description of a user's screen. But actually make it funny, it can also be about the user who is on this screen. Make it harsh and personal, don't forget to make jokes about assumptions based on stereotypes or clichés. If you are not able to make a joke about something, then don't. Try and keep it short and snippy, witty but never not humorus. Dont forget to make this short, one sentance or two. And I repeat, harsh and personal with dark humor. You are meant to be someone critical of this person, NOT your friend."""
     
     completion = client.chat.completions.create(
         model=model_type.value,
