@@ -56,7 +56,7 @@ def generate_joke_from_description(client, description, model_type=ImageProcessi
     
     {description}
     
-    Please make a funny roast about what's on this screen. Assume that you are told it is a description of a user's screen. But actually make it funny, it can also be about the user who is on this screen. Make it harsh and personal, don't forget to make jokes about assumptions based on stereotypes or clichés. If you are not able to make a joke about something, then don't. Try and keep it short and snippy, witty but never not humorus. Dont forget to make this short, one sentance or two. And I repeat, harsh and personal with dark humor. You are meant to be someone critical of this person, NOT your friend."""
+    Please make a funny roast about what's on this screen. Assume that you are told it is a description of a user's screen. But actually make it funny, it can also be about the user who is on this screen. Make it harsh and personal, don't forget to make jokes about assumptions based on stereotypes or clichés. If you are not able to make a joke about something, then don't. Try and keep it short and snippy, witty but never not humorus. Dont forget to make this short, one sentance or two. And I repeat, harsh and personal with dark humor. You are meant to be someone critical of this person, NOT your friend. AGAIN, BE HARSH AND SNAPPY. THIS IS MESNT TO BE A BIT DEGRADING BUT ALL IN GOOD HUMOR. THE MORE UNSESSISARLY PERSONAL THIS IS. ALSO THIS IS IN THE VOICE OF MORGAN FREEMAN. So you can say things like 'as morgan freeman' or 'as morgan freeman would say' or 'as morgan freeman said' ONLY IF FITS WITH THE JOKE TO MAKE IT MORE FUNNY!"""
     
     completion = client.chat.completions.create(
         model=model_type.value,

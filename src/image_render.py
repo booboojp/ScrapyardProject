@@ -7,10 +7,11 @@ import win32api
 import threading
 from enum import Enum
 from typing import Tuple
+from .resource_path import get_resource_path
 
 class WindowMode(Enum):
     """Window display modes for the image renderer."""
-    NORMAL = 0
+    NORMAL = 0#cod
     NOFRAME = pygame.NOFRAME
     FULLSCREEN = pygame.FULLSCREEN
 
@@ -58,13 +59,15 @@ class ImageRenderer:
             True if image loaded successfully, False otherwise
         """
         try:
-            self.logger.info(f"Loading image from: {image_path}")
+            # Use get_resource_path to resolve the image path
+            resource_path = get_resource_path(image_path)
+            self.logger.info(f"Loading image from: {resource_path}")
 
-            if not os.path.isfile(image_path):
-                self.logger.error(f"Image file does not exist at {image_path}")
+            if not os.path.isfile(resource_path):
+                self.logger.error(f"Image file does not exist at {resource_path}")
                 return False
 
-            self.image = pygame.image.load(image_path)
+            self.image = pygame.image.load(resource_path)
             self.width, self.height = self.image.get_size()
             self.image = self.image.convert_alpha()
 

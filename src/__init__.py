@@ -9,6 +9,7 @@ from .openai_vision import (
 )
 from .tts import AdvancedTextToSpeech, SpeechConfig, SpeechState
 from .image_render import ImageRenderer, WindowMode
+from .resource_path import get_resource_path  # Add this line
 
 __all__ = [
     # Screenshot related
@@ -30,5 +31,8 @@ __all__ = [
 
     # Image rendering related
     "ImageRenderer",
-    "WindowMode"
+    "WindowMode",
+    
+    # Resource path helper
+    "get_resource_path"  # Add this line
 ]

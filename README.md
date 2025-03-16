@@ -1,7 +1,8 @@
+![Logo by Tuyết Đỗ](./assets/images/logo.png)
+*logo by Tuyết Đỗ!*
 # 🔥 "I don't know" Said my Teammate 🔥
 ![Morgan Freeman Judges You](https://preview.redd.it/a-portrait-drawing-of-morgan-freeman-made-by-david-v0-5da0wvm19e4e1.png?auto=webp&s=d80462e066cdf88ce14067f53edee2935e67d623)
 *my pookie^^^*
-
 
 
 
@@ -62,6 +63,23 @@ pyinstaller main.spec
 # Look at what you've done with your life
 ```
 
+### 🔑 Setting Up Your API Key (REQUIRED) 🔑
+
+The app needs an OpenAI API key to analyze your screen and generate those devastating insults. Here's how to set it up:
+
+1. **Get an API Key** 💰
+   - Go to [OpenAI's website](https://platform.openai.com/api-keys)
+   - Sign up or log in
+   - Create a new API key
+   - Prepare for OpenAI to drain your wallet with their pricing
+
+2. **Set Up Your Environment File** 📝
+   - Find or create a `.env` file in the project directory
+   - Add the following line, replacing `your_api_key_here` with your actual API key:
+```
+   OPENAI_API_KEY=sk-your_api_key_here_without_quotes
+```
+
 ---
 
 ## 📋 Requirements (Things You Need for Self-Destruction) 📋
@@ -102,7 +120,7 @@ The answer is this unholy creation that somehow works despite the caffeine tremo
 
 ## ⚠️ Privacy Notice ⚠️
 
-This app sends screenshots to OpenAI. If you're doing something illegal/embarrassing, maybe don't use this? We're not responsible for your psychological damage or criminal investigations.
+This app sends screenshots to OpenAI. If you're doing something illegal/embarrassing, maybe don't use this? We're not responsible for your psychological damage or criminal investigations. Or your parents finding out what you where searching with that **quick** pauce, alt tab but not mute... yikes!
 
 ---
 
