@@ -15,6 +15,7 @@ from src import (
 
 def testingTask():
     try:
+        time.sleep(3)
         print("=== ScrapyardNoVa Demo ===\n")
         tts = AdvancedTextToSpeech()
         tts.configure(SpeechConfig(rate=150, volume=0.8))
