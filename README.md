@@ -1,4 +1,4 @@
-![Logo by Tuyết Đỗ](./assets/images/logo.png)
+![Logo by Tuyet Do](https://i.ibb.co/ZpfY6J8m/untitled135-20250316105216.png)
 *logo by Tuyết Đỗ!*
 # 🔥 "I don't know" Said my Teammate 🔥
 ![Morgan Freeman Judges You](https://preview.redd.it/a-portrait-drawing-of-morgan-freeman-made-by-david-v0-5da0wvm19e4e1.png?auto=webp&s=d80462e066cdf88ce14067f53edee2935e67d623)
