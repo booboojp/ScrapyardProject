@@ -19,6 +19,8 @@ Have you ever thought to yourself? *"Where are da ops? Why is no one **motivatin
 
 This revolutionary FOSS (Free Open Source Software) will analyze what you are doing randomly, and then give you the feedback that your father never held back, cruelly.
 
+## FOR THE DEMO CHECK PODIUM
+
 > But this time we realized that people might not like that, because social norms this, abuse laws that... yap yap yap so boring! So we held back a little.... just a little. 😈
 
 ---
