@@ -25,5 +25,9 @@ __all__ = [
     # Text-to-speech related
     "AdvancedTextToSpeech",
     "SpeechConfig",
-    "SpeechState"
+    "SpeechState",
+
+    # Image rendering
+    "ImageRenderer",
+    "clear_console"
 ]
