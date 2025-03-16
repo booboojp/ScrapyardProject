@@ -101,7 +101,6 @@ class ImageRenderer:
             )
             pygame.display.set_caption(title)
             
-            # Set up transparent window
             hwnd = pygame.display.get_wm_info()["window"]
             win32gui.SetWindowLong(
                 hwnd,

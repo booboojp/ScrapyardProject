@@ -62,7 +62,7 @@ def take_screenshot_and_analyze(prompt="Describe this image",
     
     openai_client = load_openai_client()
     completion = process_image_with_openai(
-        openai_client, 
+        openai_client,
         image_path, 
         prompt, 
         model_type=model_type, 
