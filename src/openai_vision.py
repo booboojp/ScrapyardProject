@@ -5,7 +5,7 @@ import os
 import base64
 
 from .screenshot import ScreenshotManager, PathType
-
+# William is cool!
 load_dotenv()
 
 class ImageProcessingOpenAIModelTypes(Enum):
