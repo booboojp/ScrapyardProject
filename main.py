@@ -5,22 +5,30 @@ from src import (
     AdvancedTextToSpeech,
     SpeechConfig
 )
+import time
+import schedule
 
-def main():
+def testingTask():
+    time.sleep(5)
     print("=== ScrapyardNoVa Demo ===\n")
     tts = AdvancedTextToSpeech()
     tts.configure(SpeechConfig(rate=150, volume=0.8))
     
     print("Taking a screenshot and analyzing...")
-    result = take_screenshot_and_analyze("What can you see in this screenshot?")
+    result, joke = take_screenshot_and_analyze("What can you see in this screenshot?", generate_joke=True)
     
-    print(f"\nOpenAI Response:\n{result}\n")
+    print(f"\nOpenAI Description:\n{result}\n")
+    print(f"\nOpenAI Joke:\n{joke}\n")
     
-    print("Speaking the response...")
-    tts.speak_async(result)
+    print("Speaking the joke...")
+    tts.speak_async(joke)
     
     print("Press Enter to exit...")
     input()
+testingTask()
 
-if __name__ == "__main__":
-    main()
+#schedule.every(5).minutes.do(testingTask)
+#def main():
+#	while True:
+#		schedule.run_pending()
+#		time.sleep(1)

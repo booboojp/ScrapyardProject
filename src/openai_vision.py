@@ -51,10 +51,31 @@ def process_image_with_openai(client, image_path, prompt, model_type=ImageProces
     
     return completion
 
+def generate_joke_from_description(client, description, model_type=ImageProcessingOpenAIModelTypes.GPT_4_O):
+    """Generate a joke about the content of a screen based on its description."""
+    prompt = f"""The following is a description of what's on a user's screen: 
+    
+    {description}
+    
+    Please make a funny joke about what's on this screen. Keep it light and relevant to the content described. But actully make it funny, it can also be about the user who is on this screen. Or roast them, mainly roast them Witch would be prefered. Dont say anything before or after the roast, just say it."""
+    
+    completion = client.chat.completions.create(
+        model=model_type.value,
+        messages=[
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ],
+    )
+    
+    return completion.choices[0].message.content
+
 def take_screenshot_and_analyze(prompt="Describe this image", 
                               model_type=ImageProcessingOpenAIModelTypes.GPT_4_O,
-                              detail=ImageProcessingInputDetail.AUTO):
-    """Take a screenshot and analyze it with OpenAI."""
+                              detail=ImageProcessingInputDetail.AUTO,
+                              generate_joke=False):
+    """Take a screenshot and analyze it with OpenAI. Optionally generate a joke about the content."""
     os.system('cls' if os.name == 'nt' else 'clear')
     
     screenshot_manager = ScreenshotManager()
@@ -69,7 +90,13 @@ def take_screenshot_and_analyze(prompt="Describe this image",
         detail=detail
     )
     
-    return completion.choices[0].message.content
+    analysis = completion.choices[0].message.content
+    
+    if generate_joke:
+        joke = generate_joke_from_description(openai_client, analysis, model_type)
+        return analysis, joke
+    
+    return analysis
 
 if __name__ == "__main__":
     result = take_screenshot_and_analyze()
